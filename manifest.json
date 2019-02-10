@@ -5,16 +5,16 @@
   "description": "起動時に一定期間経過した履歴・キャッシュを削除",
   "background": {
     "scripts": ["/js/background.js"],
-    "persistent": true
+    "persistent": false
   },
   "icons": {
     "128": "/img/icon128.png"
   },
   "options_ui": {
-        "page": "/html/options.html",
-        "chrome_style": true,
-        "open_in_tab": false
-    },
+    "page": "html/options.html",
+    "chrome_style": true,
+    "open_in_tab": false
+  },
   "permissions": [
     "browsingData",
     "history",

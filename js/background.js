@@ -14,7 +14,6 @@ function removeBrowsingData(options){
   }, {
     "appcache": options.removeAppCache,
     "cache": options.removeCache,
-    "cacheStorage": options.removeCacheStorage,
     "cookies": options.removeCookies,
     "downloads": true,
     "history": true,
@@ -46,7 +45,6 @@ function removeDownloadHistory(downloadItem){
     sinceDay: 7,
     removeDownloadHistory: false,
     removeCache: false,
-    removeCacheStorage: false,
     removeAppCache: false,
     removeCookies: false,
   }, function(options){
