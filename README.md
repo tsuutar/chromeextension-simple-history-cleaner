@@ -1,4 +1,4 @@
-# Simple history cleanner
+# Simple history cleaner
 
 起動時に、Google Chromeの履歴・キャッシュを削除します
 
