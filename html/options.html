@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>履歴・キャッシュの自動削除</title>
+  </head>
+  <body style="width: 330px;">
+    <h3>オプション</h3>
+    <div style="margin-top: 30px;">
+      <h4>履歴を削除しない日数</h4>
+      <p style="margin-left: 10px;">
+        <input type="tel" id="since-day-option" maxlength="4" pattern="[0-9]+" title="数値のみで入力して下さい">日
+      </p>
+      <p style="margin-left: 10px;">
+        この日数を経過した履歴を削除します
+      </p>
+    </div>
+    <div>
+      <h4>履歴の保存</h4>
+      <p>
+        <input type="checkbox" id="remove-downloadhistory-option"> 
+        <label for="remove-downloadhistory-option">ダウンロードの履歴を無効化</label>
+        <p style="margin-left: 24px;">
+            有効の場合、ダウンロードの履歴は保存されません
+        </p>
+      </p>
+    </div>
+    <div>
+      <h4>キャッシュの削除</h4>
+      <p>
+          <input type="checkbox" id="remove-cache-option"> 
+          <label for="remove-cache-option">キャッシュを削除</label>
+      </p>
+      <p>
+          <input type="checkbox" id="remove-cachestorage-option"> 
+          <label for="remove-cachestorage-option">キャッシュストレージを削除</label>
+      </p>
+      <p>
+          <input type="checkbox" id="remove-appcache-option"> 
+          <label for="remove-appcache-option">アプリケーションキャッシュを削除</label>
+      </p>
+      <p>
+          <input type="checkbox" id="remove-cookies-option"> 
+          <label for="remove-cookies-option">Cookiesを削除</label>
+      </p>
+    </div>
+    <script src="/js/options.js"></script>
+  </body>
+</html>
