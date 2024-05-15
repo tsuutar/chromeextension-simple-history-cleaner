@@ -1,24 +1,17 @@
 {
   "name": "Simple History Cleaner",
-  "version": "1.0.0",
-  "manifest_version": 2,
+  "version": "1.0.2",
+  "manifest_version": 3,
   "description": "起動時に一定期間経過した履歴・キャッシュを削除",
   "background": {
-    "scripts": ["/js/background.js"],
-    "persistent": false
+    "service_worker": "/js/background.js"
   },
   "icons": {
     "128": "/img/icon128.png"
   },
   "options_ui": {
     "page": "html/options.html",
-    "chrome_style": true,
     "open_in_tab": false
   },
-  "permissions": [
-    "browsingData",
-    "history",
-    "downloads",
-    "storage"
-  ]
+  "permissions": ["browsingData", "history", "downloads", "storage"]
 }
