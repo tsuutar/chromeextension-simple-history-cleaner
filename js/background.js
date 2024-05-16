@@ -4,27 +4,25 @@
  */
 function removeBrowsingData(options) {
   var callback = function () {
-    console.log("history has removed.");
+    console.log("history has been removed.");
   };
 
   var endTime = new Date().getTime() - 1000 * 60 * 60 * 24 * options.keepDay;
-  chrome.history.deleteRange(
-    {
-      startTime: 0,
-      endTime: endTime,
-    },
-    callback
-  );
+
+  // 削除するデータの種類を指定
+  var dataToRemove = {
+    history: true,
+  };
+
+  if (options.removeCache) dataToRemove.cache = true;
+  if (options.removeAppCache) dataToRemove.appcache = true;
+  if (options.removeCookies) dataToRemove.cookies = true;
 
   var removalOptions = {
     since: endTime,
   };
 
-  if (options.removeCache) removalOptions.cache = true;
-  if (options.removeAppCache) removalOptions.appcache = true;
-  if (options.removeCookies) removalOptions.cookies = true;
-
-  chrome.browsingData.remove(removalOptions, callback);
+  chrome.browsingData.remove(removalOptions, dataToRemove, callback);
 }
 
 /**
@@ -60,6 +58,7 @@ function removeDownloadHistory(downloadItem) {
     },
     function (options) {
       /** 起動時処理 */
+
       /** ダウンロード完了時、履歴を削除*/
       if (options.removeDownloadHistory) {
         chrome.downloads.onChanged.addListener(function (downloadItem) {
